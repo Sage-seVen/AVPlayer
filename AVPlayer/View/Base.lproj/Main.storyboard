@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="al4-Vz-zzx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--AV Player-->
+        <scene sceneID="E0Q-f1-uDL">
+            <objects>
+                <tableViewController id="BaB-oP-XsV" customClass="VideosTableViewController" customModule="AVPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oZC-Vz-QSK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoCell" rowHeight="250" id="Qic-7Q-SuD" customClass="VideoTableViewCell" customModule="AVPlayer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="250"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qic-7Q-SuD" id="lNU-rs-qcB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbV1" translatesAutoresizingMaskIntoConstraints="NO" id="pNT-cg-6ge">
+                                            <rect key="frame" x="16" y="16" width="382" height="226"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QB2-Bt-0Vu">
+                                            <rect key="frame" x="20" y="205.5" width="50" height="29"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="SGM-Du-6ga"/>
+                                                <constraint firstAttribute="height" constant="30" id="t7n-Cq-GKE"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hS6-ic-Dtg">
+                                            <rect key="frame" x="78" y="210" width="97" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="hS6-ic-Dtg" secondAttribute="bottom" constant="19" id="6qB-RS-XZg"/>
+                                        <constraint firstItem="QB2-Bt-0Vu" firstAttribute="leading" secondItem="lNU-rs-qcB" secondAttribute="leading" constant="20" id="7Yf-Ta-Gw7"/>
+                                        <constraint firstItem="pNT-cg-6ge" firstAttribute="leading" secondItem="lNU-rs-qcB" secondAttribute="leading" constant="16" id="Phg-4e-gop"/>
+                                        <constraint firstItem="hS6-ic-Dtg" firstAttribute="leading" secondItem="QB2-Bt-0Vu" secondAttribute="trailing" constant="8" id="Rj1-TP-E6u"/>
+                                        <constraint firstItem="pNT-cg-6ge" firstAttribute="top" secondItem="lNU-rs-qcB" secondAttribute="top" constant="16" id="YP7-au-uPO"/>
+                                        <constraint firstAttribute="bottom" secondItem="pNT-cg-6ge" secondAttribute="bottom" constant="8" id="eRl-xq-SF2"/>
+                                        <constraint firstAttribute="bottom" secondItem="QB2-Bt-0Vu" secondAttribute="bottom" constant="15" id="uvw-ni-zw2"/>
+                                        <constraint firstAttribute="trailing" secondItem="pNT-cg-6ge" secondAttribute="trailing" constant="16" id="ybz-cP-eK4"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="thumbnailImageView" destination="pNT-cg-6ge" id="Gw7-0O-tQC"/>
+                                    <outlet property="videoNameLabel" destination="hS6-ic-Dtg" id="2tt-xp-ied"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BaB-oP-XsV" id="QXe-Xl-aRz"/>
+                            <outlet property="delegate" destination="BaB-oP-XsV" id="2RY-Kw-VMd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="AV Player" id="tUP-fS-VPQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2TF-Fv-fz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="150.72463768115944" y="-21.428571428571427"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x43-Tj-XgA">
+            <objects>
+                <navigationController id="al4-Vz-zzx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="uGZ-L8-brN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BaB-oP-XsV" kind="relationship" relationship="rootViewController" id="bh6-6W-b2Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQ7-gX-8qK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-767" y="-21"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="thumbV1" width="1200" height="669"/>
+    </resources>
+</document>
