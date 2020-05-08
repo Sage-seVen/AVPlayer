@@ -10,95 +10,45 @@ import UIKit
 import AVKit
 import AVFoundation
 
-class VideosTableViewController: UITableViewController {
-
+class VideosTableViewController: UITableViewController , PlayerProtocol{
+    
     var videos = Video.fetchVideoList()
-    var player = AVPlayer()
-    var playerViewController = AVPlayerViewController()
+    var inbuiltAVPlayer = InbuiltAVPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        inbuiltAVPlayer.delegate=self
     }
-
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return videos.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath) as! VideoTableViewCell
         cell.videoNameLabel.text = videos[indexPath.row].videoName
         cell.thumbnailImageView.image = UIImage(named: videos[indexPath.row].thumbnailFileName)
         return cell
     }
-
+    
     //MARK: - Table View Delegates
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected Row is : \(indexPath.row)")
         tableView.deselectRow(at: indexPath, animated: true)
-        playVideo(at: indexPath)
-    }
-    
-    
-    func playVideo( at indexPath: IndexPath){
         let selectedVideo = videos[indexPath.row]
-        let videoPath = Bundle.main.path(forResource: selectedVideo.videoFileName, ofType: "mp4")
-        let videoURL = URL(fileURLWithPath: videoPath!)
-        player = AVPlayer(url: videoURL)
-        playerViewController.player = player
         
-        self.present(playerViewController, animated: true, completion: nil)
+        //Method 1: To play with Inbuilt AVPlayer Uncomment this Block
+        //inbuiltAVPlayer.playVideo(with: selectedVideo)
+        
+        //Method 2: To Play with external Video URL
+        //inbuiltAVPlayer.playVideo(with: "")
+        
+        //Method 3: To Play with Custom AVPlayer, Uncomment this block
+        let playerVC = self.storyboard?.instantiateViewController(identifier: "playerVC") as! PlayerViewController
+        playerVC.videoToPlay = selectedVideo
+        self.navigationController?.pushViewController(playerVC, animated: true)
     }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
