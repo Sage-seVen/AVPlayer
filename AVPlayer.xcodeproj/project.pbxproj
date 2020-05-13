@@ -20,6 +20,8 @@
 		49B55E0F24649A6F00F20E81 /* CustomAVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B55E0E24649A6F00F20E81 /* CustomAVPlayer.swift */; };
 		49B55E112464A48F00F20E81 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B55E102464A48F00F20E81 /* PlayerViewController.swift */; };
 		49B55E142464B16100F20E81 /* InbuiltAVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B55E132464B16100F20E81 /* InbuiltAVPlayer.swift */; };
+		49B55E1A246B24A500F20E81 /* CustomPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B55E19246B24A500F20E81 /* CustomPlayerView.xib */; };
+		49B55E1C246B24C100F20E81 /* CustomPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B55E1B246B24C100F20E81 /* CustomPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		49B55E0E24649A6F00F20E81 /* CustomAVPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAVPlayer.swift; sourceTree = "<group>"; };
 		49B55E102464A48F00F20E81 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		49B55E132464B16100F20E81 /* InbuiltAVPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbuiltAVPlayer.swift; sourceTree = "<group>"; };
+		49B55E19246B24A500F20E81 /* CustomPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPlayerView.xib; sourceTree = "<group>"; };
+		49B55E1B246B24C100F20E81 /* CustomPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				49B55DEF24641F0C00F20E81 /* Main.storyboard */,
+				49B55E19246B24A500F20E81 /* CustomPlayerView.xib */,
+				49B55E1B246B24C100F20E81 /* CustomPlayerView.swift */,
 				49B55E072464341600F20E81 /* VideoTableViewCell.swift */,
 			);
 			path = View;
@@ -190,6 +196,7 @@
 				49B55E0C246440C900F20E81 /* video1.mp4 in Resources */,
 				49B55DF624641F0F00F20E81 /* Assets.xcassets in Resources */,
 				49B55DF124641F0C00F20E81 /* Main.storyboard in Resources */,
+				49B55E1A246B24A500F20E81 /* CustomPlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +211,7 @@
 				49B55E112464A48F00F20E81 /* PlayerViewController.swift in Sources */,
 				49B55DF424641F0C00F20E81 /* AVPlayer.xcdatamodeld in Sources */,
 				49B55E082464341600F20E81 /* VideoTableViewCell.swift in Sources */,
+				49B55E1C246B24C100F20E81 /* CustomPlayerView.swift in Sources */,
 				49B55DEA24641F0C00F20E81 /* AppDelegate.swift in Sources */,
 				49B55E0624642EFA00F20E81 /* VideosTableViewController.swift in Sources */,
 				49B55DEC24641F0C00F20E81 /* SceneDelegate.swift in Sources */,

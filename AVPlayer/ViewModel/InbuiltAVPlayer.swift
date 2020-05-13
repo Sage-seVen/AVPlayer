@@ -9,7 +9,7 @@
 import Foundation
 import AVKit
 
-protocol PlayerProtocol:UITableViewController{}
+protocol PlayerProtocol:UIViewController{}
 
 class InbuiltAVPlayer{
     

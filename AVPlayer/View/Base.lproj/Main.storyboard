@@ -90,106 +90,17 @@
                                     <constraint firstAttribute="width" secondItem="3F8-5u-Kg3" secondAttribute="height" multiplier="16:9" id="MUO-hN-jal"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G0D-7V-cZl">
-                                <rect key="frame" x="0.0" y="756" width="414" height="140"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="951-wa-zee">
-                                        <rect key="frame" x="0.0" y="70" width="414" height="40"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDQ-zG-Idc">
-                                                <rect key="frame" x="0.0" y="0.0" width="45" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                <state key="normal" title="🔇"/>
-                                                <connections>
-                                                    <action selector="muteButtonPressed:" destination="p7f-gX-0fd" eventType="touchUpInside" id="cOt-Pw-hez"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mo-k0-FUD">
-                                                <rect key="frame" x="92" y="0.0" width="45.5" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                <state key="normal" title="⏪"/>
-                                                <connections>
-                                                    <action selector="rewindButtonPressed:" destination="p7f-gX-0fd" eventType="touchUpInside" id="c8O-TQ-t6G"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0v-fu-1OI">
-                                                <rect key="frame" x="184.5" y="0.0" width="45" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                <state key="normal" title="▶️"/>
-                                                <connections>
-                                                    <action selector="playButtonPressed:" destination="p7f-gX-0fd" eventType="touchUpInside" id="toW-Gk-cRC"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jP2-Kk-a9H">
-                                                <rect key="frame" x="276.5" y="0.0" width="45.5" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                <state key="normal" title="⏩"/>
-                                                <connections>
-                                                    <action selector="forwardButtonPressed:" destination="p7f-gX-0fd" eventType="touchUpInside" id="UNA-Ni-aUG"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4v-V2-86q">
-                                                <rect key="frame" x="369" y="0.0" width="45" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                <state key="normal" title="↔️"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="in8-f2-P8g">
-                                        <rect key="frame" x="-2" y="10" width="418" height="32.5"/>
-                                        <connections>
-                                            <action selector="sliderChanged:" destination="p7f-gX-0fd" eventType="valueChanged" id="bxZ-TP-RMe"/>
-                                        </connections>
-                                    </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJj-g2-AgN">
-                                        <rect key="frame" x="8" y="49.5" width="34" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxE-HF-9lM">
-                                        <rect key="frame" x="372" y="49.5" width="34" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="951-wa-zee" firstAttribute="top" secondItem="fJj-g2-AgN" secondAttribute="bottom" constant="6" id="04v-ez-efi"/>
-                                    <constraint firstAttribute="trailing" secondItem="lxE-HF-9lM" secondAttribute="trailing" constant="8" id="7PO-S1-GSD"/>
-                                    <constraint firstItem="in8-f2-P8g" firstAttribute="top" secondItem="G0D-7V-cZl" secondAttribute="top" constant="10" id="FDh-KM-wXX"/>
-                                    <constraint firstItem="lxE-HF-9lM" firstAttribute="top" secondItem="in8-f2-P8g" secondAttribute="bottom" constant="8" id="Jp5-FK-9MY"/>
-                                    <constraint firstAttribute="trailing" secondItem="951-wa-zee" secondAttribute="trailing" id="NaK-E5-H83"/>
-                                    <constraint firstItem="in8-f2-P8g" firstAttribute="leading" secondItem="G0D-7V-cZl" secondAttribute="leading" id="PtM-C9-2d2"/>
-                                    <constraint firstAttribute="bottom" secondItem="951-wa-zee" secondAttribute="bottom" constant="30" id="RNm-7T-gsk"/>
-                                    <constraint firstItem="951-wa-zee" firstAttribute="leading" secondItem="G0D-7V-cZl" secondAttribute="leading" id="Syn-gR-T9w"/>
-                                    <constraint firstItem="fJj-g2-AgN" firstAttribute="top" secondItem="in8-f2-P8g" secondAttribute="bottom" constant="8" id="TP0-uj-0Ny"/>
-                                    <constraint firstItem="fJj-g2-AgN" firstAttribute="centerY" secondItem="lxE-HF-9lM" secondAttribute="centerY" id="Tv2-4g-euE"/>
-                                    <constraint firstAttribute="trailing" secondItem="in8-f2-P8g" secondAttribute="trailing" id="V7O-MS-cy9"/>
-                                    <constraint firstAttribute="height" constant="140" id="V9o-ic-lfb"/>
-                                    <constraint firstItem="fJj-g2-AgN" firstAttribute="leading" secondItem="G0D-7V-cZl" secondAttribute="leading" constant="8" id="Vva-ym-qxL"/>
-                                    <constraint firstItem="951-wa-zee" firstAttribute="top" secondItem="lxE-HF-9lM" secondAttribute="bottom" constant="6" id="zdA-TP-hcf"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="G0D-7V-cZl" firstAttribute="leading" secondItem="Xd6-Di-8Tq" secondAttribute="leading" id="1rR-HD-rWD"/>
                             <constraint firstItem="3F8-5u-Kg3" firstAttribute="centerY" secondItem="vc1-oZ-lRS" secondAttribute="centerY" id="5Q5-9v-2oV"/>
                             <constraint firstItem="3F8-5u-Kg3" firstAttribute="centerX" secondItem="vc1-oZ-lRS" secondAttribute="centerX" id="6ns-CM-InQ"/>
                             <constraint firstItem="3F8-5u-Kg3" firstAttribute="leading" secondItem="Xd6-Di-8Tq" secondAttribute="leading" id="SXA-Jl-LwO"/>
-                            <constraint firstItem="Xd6-Di-8Tq" firstAttribute="trailing" secondItem="G0D-7V-cZl" secondAttribute="trailing" id="hTl-Xe-7Tw"/>
-                            <constraint firstAttribute="bottom" secondItem="G0D-7V-cZl" secondAttribute="bottom" id="pnO-f3-efx"/>
                             <constraint firstItem="Xd6-Di-8Tq" firstAttribute="trailing" secondItem="3F8-5u-Kg3" secondAttribute="trailing" id="yWn-zD-KoT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xd6-Di-8Tq"/>
                     </view>
                     <connections>
-                        <outlet property="controlView" destination="G0D-7V-cZl" id="quv-zB-FSa"/>
-                        <outlet property="currentTimeLabel" destination="fJj-g2-AgN" id="OcC-LA-9sD"/>
-                        <outlet property="totalTimeLabel" destination="lxE-HF-9lM" id="aTF-Ju-pt9"/>
-                        <outlet property="videoSlider" destination="in8-f2-P8g" id="jOq-79-HTj"/>
                         <outlet property="videoView" destination="3F8-5u-Kg3" id="rsO-Ia-oNi"/>
                     </connections>
                 </viewController>

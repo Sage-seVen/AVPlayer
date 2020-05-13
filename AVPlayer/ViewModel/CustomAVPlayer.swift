@@ -48,4 +48,31 @@ class CustomAVPlayer{
         let time: CMTime = CMTimeMake(value: Int64(newTime*1000), timescale: 1000)
         player.seek(to: time)
     }
+    
+    func seekTo(sliderValue : Float){
+        let seekToTime = CMTimeMake(value: Int64(sliderValue*1000), timescale: 1000)
+        player.seek(to: seekToTime)
+    }
+    
+    func getTimeInString( from time :CMTime) -> String{
+        let totalSeconds = CMTimeGetSeconds(time)
+        let hours = Int(totalSeconds/3600)
+        let minutes = Int(totalSeconds/60) % 60
+        let seconds = Int(totalSeconds.truncatingRemainder(dividingBy: 60))
+        if hours > 0{
+            return String(format: "%i:%02i:%02i", arguments: [hours,minutes,seconds])
+        }else{
+            return String(format: "%02i:%02i", arguments: [minutes,seconds])
+        }
+    }
+    
+     func getCurrentItemDuration() -> Double? {
+        if let duration = player.currentItem?.duration.seconds{
+            return duration
+        }
+        return nil
+    }
+    
+    
+    
 }
