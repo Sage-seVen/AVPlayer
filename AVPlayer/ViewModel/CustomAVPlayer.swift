@@ -12,6 +12,7 @@ import AVFoundation
 class CustomAVPlayer{
     var player : AVPlayer!
     var playerLayer: AVPlayerLayer!
+    var timeObserverToken: Any?
     
     func initPlayer(with videoObject: Video){
         let url = Bundle.main.url(forResource: videoObject.videoFileName, withExtension: "mp4")
@@ -73,6 +74,11 @@ class CustomAVPlayer{
         return nil
     }
     
-    
+    func removeTimeObservers(){
+        if let token = timeObserverToken{
+            player.removeTimeObserver(token)
+            timeObserverToken = nil
+        }
+    }
     
 }

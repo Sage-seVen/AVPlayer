@@ -17,9 +17,9 @@ class CustomPlayerView: UIView{
     @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var videoSlider: UISlider!
     var customAVPlayer = CustomAVPlayer()
-    var isVideoPlaying = false
+    var isVideoPlaying = true
     var isAudioMuted = false
-    var isNavigationBarHidden = false
+    var isPlayerControlHidden = false
     
     override class func awakeFromNib() {
     }
@@ -58,6 +58,13 @@ class CustomPlayerView: UIView{
         customAVPlayer.seekTo(sliderValue: sender.value)
     }
     
+    func hidePlayerControls(afterSeconds time:Double){
+        DispatchQueue.main.asyncAfter(deadline: .now() + time) {
+            self.controlView.isHidden = true
+            self.isPlayerControlHidden.toggle()
+        }
+    }
+    
     func addTimeObservers(){
         let interval = CMTime(seconds: 0.5, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         let mainQueue = DispatchQueue.main
@@ -66,13 +73,8 @@ class CustomPlayerView: UIView{
             self.videoSlider.maximumValue = Float(currentItem.duration.seconds)
             self.videoSlider.value = Float(currentItem.currentTime().seconds)
             self.currentTimeLabel.text = self.customAVPlayer.getTimeInString(from: currentItem.currentTime())
-            //self.totalTimeLabel.text = self.customAVPlayer.getTimeInString(from: currentItem.duration)
+            self.totalTimeLabel.text = self.customAVPlayer.getTimeInString(from: currentItem.duration)
         })
     }
     
-//    override  func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-//        if keyPath == "duration", let duration = customAVPlayer.getCurrentItemDuration(), duration > 0.0{
-//            self.totalTimeLabel.text = customAVPlayer.getTimeInString(from: customAVPlayer.player.currentItem!.duration)
-//        }
-//    }
 }

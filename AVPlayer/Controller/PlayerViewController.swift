@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreMedia
 
 class PlayerViewController: UIViewController{
     
@@ -20,12 +19,20 @@ class PlayerViewController: UIViewController{
     var customAVPlayer = CustomAVPlayer()
     var isNavigationBarHidden = false
     var playerControlview : UIView!
+    var isPlayerControlViewHidden : Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.tapAction))
         self.view.addGestureRecognizer(gesture)
         preparePlayer()
+        customAVPlayer.play()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        customAVPlayer.removeTimeObservers()
+        customAVPlayer.player.pause()
     }
     
     override func viewDidLayoutSubviews() {
@@ -34,22 +41,19 @@ class PlayerViewController: UIViewController{
     }
     
     @objc func tapAction(sender: UITapGestureRecognizer){
-        playerControlview.isHidden.toggle()
+        isPlayerControlViewHidden.toggle()
+        playerControlview.isHidden = isPlayerControlViewHidden
         isNavigationBarHidden.toggle()
         self.navigationController?.setNavigationBarHidden(isNavigationBarHidden, animated: true)
     }
     
-    func initializeView(){
-        
-    }
-    
     func preparePlayer(){
         if let playerView = Bundle.main.loadNibNamed("CustomPlayerView", owner: self, options: nil)?.first as? CustomPlayerView {
+            
             //Adding Playerview in Controller
             videoView.addSubview(playerView)
             videoView.frame = playerView.bounds
             customAVPlayer.initPlayer(with: videoToPlay)
-            //customAVPlayer.player.currentItem?.addObserver(self, forKeyPath: "duration", options: [.new, .initial], context: nil)
             
             //Adding Player in Playerview
             playerView.videoView.layer.addSublayer(customAVPlayer.playerLayer)
@@ -57,12 +61,14 @@ class PlayerViewController: UIViewController{
             //Assigning variables Objects
             playerView.customAVPlayer = self.customAVPlayer
             self.playerControlview = playerView.controlView
+            self.isPlayerControlViewHidden = playerView.isPlayerControlHidden
             
             //Adding Time Observers
-            //playerView.addTimeObservers()
+            playerView.addTimeObservers()
+            
+            //Customising Player View Controls
+            playerView.hidePlayerControls(afterSeconds: 3)
         }
     }
-    
-
     
 }
