@@ -18,7 +18,7 @@ class CustomAVPlayer{
         let url = Bundle.main.url(forResource: videoObject.videoFileName, withExtension: "mp4")
         player = AVPlayer(url: url!)
         playerLayer = AVPlayerLayer(player: player)
-        playerLayer.videoGravity = .resize
+        playerLayer.videoGravity = .resizeAspectFill
     }
     
     func play(){

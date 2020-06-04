@@ -12,7 +12,9 @@ class VideoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var videoNameLabel: UILabel!
+    @IBOutlet weak var recommendedLabelOutlet: UILabel!
     
+    @IBOutlet weak var recommendedImageViewOutlet: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

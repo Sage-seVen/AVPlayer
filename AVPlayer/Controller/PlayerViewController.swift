@@ -8,13 +8,11 @@
 
 import UIKit
 
-class PlayerViewController: UIViewController{
+class PlayerViewController: UIViewController, UIGestureRecognizerDelegate{
     
+    @IBOutlet weak var recommendedTableView: UITableView!
     @IBOutlet weak var videoView: UIView!
-    @IBOutlet weak var controlView: UIView!
-    @IBOutlet weak var currentTimeLabel: UILabel!
-    @IBOutlet weak var totalTimeLabel: UILabel!
-    @IBOutlet weak var videoSlider: UISlider!
+    var videos = Video.fetchVideoList()
     var videoToPlay: Video!
     var customAVPlayer = CustomAVPlayer()
     var isNavigationBarHidden = false
@@ -23,8 +21,10 @@ class PlayerViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideNavBar()
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.tapAction))
-        self.view.addGestureRecognizer(gesture)
+        self.videoView.addGestureRecognizer(gesture)
         preparePlayer()
         customAVPlayer.play()
     }
@@ -43,6 +43,10 @@ class PlayerViewController: UIViewController{
     @objc func tapAction(sender: UITapGestureRecognizer){
         isPlayerControlViewHidden.toggle()
         playerControlview.isHidden = isPlayerControlViewHidden
+        //hideNavBar()
+    }
+    
+    func hideNavBar(){
         isNavigationBarHidden.toggle()
         self.navigationController?.setNavigationBarHidden(isNavigationBarHidden, animated: true)
     }
