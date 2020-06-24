@@ -10,7 +10,7 @@ import UIKit
 import CoreMedia
 
 class CustomPlayerView: UIView{
-
+    
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var controlView: UIView!
     @IBOutlet weak var currentTimeLabel: UILabel!
@@ -20,6 +20,7 @@ class CustomPlayerView: UIView{
     var isVideoPlaying = true
     var isAudioMuted = false
     var isPlayerControlHidden = false
+    var totalTimeDurationSeconds = 0.0
     
     override class func awakeFromNib() {
     }
@@ -56,6 +57,9 @@ class CustomPlayerView: UIView{
     
     @IBAction func sliderChanged(_ sender: UISlider) {
         customAVPlayer.seekTo(sliderValue: sender.value)
+        if(sender.value == 0.5){
+            videoSlider.minimumTrackTintColor = .yellow
+        }
     }
     
     func hidePlayerControls(afterSeconds time:Double){
@@ -77,4 +81,33 @@ class CustomPlayerView: UIView{
         })
     }
     
+    func addCuepointsInSlider(cuepoints: [NSNumber]){
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0, execute: {
+            guard let currentItem = self.customAVPlayer.player.currentItem else {return}
+            self.totalTimeDurationSeconds = self.customAVPlayer.getTimeInSeconds(from: currentItem.duration)
+            print("Total Video Time is: \(self.totalTimeDurationSeconds) seconds")
+            
+            for index in 0...cuepoints.count-1 {
+                let markerView = UIView()
+                markerView.backgroundColor = .yellow
+                markerView.translatesAutoresizingMaskIntoConstraints = false
+                let sliderWidth = Double(self.videoSlider.frame.width), sliderOrigin = Double(self.videoSlider.frame.origin.x)
+                print("Cuepoint:\(Double(exactly: cuepoints[index])!) Width: \(sliderWidth) Origin: \(sliderOrigin)")
+                let cuepointXValue = (sliderWidth / self.totalTimeDurationSeconds) * Double(exactly: cuepoints[index])!
+                print("CuePointXValue:\(cuepointXValue)")
+                markerView.frame = CGRect.init(x: cuepointXValue, y: 14.5, width: 3, height: 3)
+                self.videoSlider.addSubview(markerView)
+                
+                /*
+                let thumbRect = self.videoSlider.thumbRect(forBounds: self.videoSlider.bounds, trackRect: self.videoSlider.trackRect(forBounds: self.videoSlider.bounds), value: Float(cuepoints[index]))
+                let convertedThumbRect = self.videoSlider.convert(thumbRect, to: self.videoView)
+                
+                NSLayoutConstraint.activate([
+                    markerView.centerXAnchor.constraint(equalTo: self.videoView.leadingAnchor, constant: convertedThumbRect.midX),
+                    self.videoSlider.topAnchor.constraint(equalToSystemSpacingBelow: markerView.bottomAnchor, multiplier: 1)
+                ])*/
+            }
+        })
+    }
 }

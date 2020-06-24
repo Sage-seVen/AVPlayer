@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		491B9E8E2488D50900EA6410 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 491B9E8D2488D50900EA6410 /* video2.mp4 */; };
 		491B9E902488D52300EA6410 /* video3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 491B9E8F2488D52300EA6410 /* video3.mp4 */; };
+		491B9E92248E0F2100EA6410 /* PlayerViewController+IMAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491B9E91248E0F2100EA6410 /* PlayerViewController+IMAds.swift */; };
+		49471D4F24A16263006DE0CC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49471D4E24A16263006DE0CC /* Constants.swift */; };
 		497CF36F247EEF0100B4793C /* PlayerViewController+RecommendedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CF36E247EEF0100B4793C /* PlayerViewController+RecommendedTableView.swift */; };
 		49B55DEA24641F0C00F20E81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B55DE924641F0C00F20E81 /* AppDelegate.swift */; };
 		49B55DEC24641F0C00F20E81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B55DEB24641F0C00F20E81 /* SceneDelegate.swift */; };
@@ -25,11 +27,14 @@
 		49B55E142464B16100F20E81 /* InbuiltAVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B55E132464B16100F20E81 /* InbuiltAVPlayer.swift */; };
 		49B55E1A246B24A500F20E81 /* CustomPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B55E19246B24A500F20E81 /* CustomPlayerView.xib */; };
 		49B55E1C246B24C100F20E81 /* CustomPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B55E1B246B24C100F20E81 /* CustomPlayerView.swift */; };
+		C627652513A19759F812F5AA /* libPods-AVPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73184FCC9D50BFED82FE9C39 /* libPods-AVPlayer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		491B9E8D2488D50900EA6410 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
 		491B9E8F2488D52300EA6410 /* video3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video3.mp4; sourceTree = "<group>"; };
+		491B9E91248E0F2100EA6410 /* PlayerViewController+IMAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerViewController+IMAds.swift"; sourceTree = "<group>"; };
+		49471D4E24A16263006DE0CC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		497CF36E247EEF0100B4793C /* PlayerViewController+RecommendedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerViewController+RecommendedTableView.swift"; sourceTree = "<group>"; };
 		49B55DE624641F0C00F20E81 /* AVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B55DE924641F0C00F20E81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +53,9 @@
 		49B55E132464B16100F20E81 /* InbuiltAVPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InbuiltAVPlayer.swift; sourceTree = "<group>"; };
 		49B55E19246B24A500F20E81 /* CustomPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPlayerView.xib; sourceTree = "<group>"; };
 		49B55E1B246B24C100F20E81 /* CustomPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlayerView.swift; sourceTree = "<group>"; };
+		73184FCC9D50BFED82FE9C39 /* libPods-AVPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AVPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86D906F2AF89E851C77AEB4D /* Pods-AVPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVPlayer.release.xcconfig"; path = "Target Support Files/Pods-AVPlayer/Pods-AVPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		DC24F94371F2DDF937724F18 /* Pods-AVPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVPlayer.debug.xcconfig"; path = "Target Support Files/Pods-AVPlayer/Pods-AVPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C627652513A19759F812F5AA /* libPods-AVPlayer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +75,8 @@
 			children = (
 				49B55DE824641F0C00F20E81 /* AVPlayer */,
 				49B55DE724641F0C00F20E81 /* Products */,
+				4EE542280CC91434F7A494B4 /* Pods */,
+				5EA4F209D5AFBB17EFD09B2D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				49B55E0024642BB500F20E81 /* Video.swift */,
+				49471D4E24A16263006DE0CC /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +121,7 @@
 				49B55E0524642EFA00F20E81 /* VideosTableViewController.swift */,
 				49B55E102464A48F00F20E81 /* PlayerViewController.swift */,
 				497CF36E247EEF0100B4793C /* PlayerViewController+RecommendedTableView.swift */,
+				491B9E91248E0F2100EA6410 /* PlayerViewController+IMAds.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,6 +156,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		4EE542280CC91434F7A494B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC24F94371F2DDF937724F18 /* Pods-AVPlayer.debug.xcconfig */,
+				86D906F2AF89E851C77AEB4D /* Pods-AVPlayer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5EA4F209D5AFBB17EFD09B2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73184FCC9D50BFED82FE9C39 /* libPods-AVPlayer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49B55DFD24641F0F00F20E81 /* Build configuration list for PBXNativeTarget "AVPlayer" */;
 			buildPhases = (
+				2968ABD78CFB05CE5751EEDB /* [CP] Check Pods Manifest.lock */,
 				49B55DE224641F0C00F20E81 /* Sources */,
 				49B55DE324641F0C00F20E81 /* Frameworks */,
 				49B55DE424641F0C00F20E81 /* Resources */,
+				C8F0F437D4194DB18B7DF4E1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,6 +245,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2968ABD78CFB05CE5751EEDB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AVPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8F0F437D4194DB18B7DF4E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AVPlayer/Pods-AVPlayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AVPlayer/Pods-AVPlayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AVPlayer/Pods-AVPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		49B55DE224641F0C00F20E81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -222,8 +296,10 @@
 				49B55E112464A48F00F20E81 /* PlayerViewController.swift in Sources */,
 				49B55DF424641F0C00F20E81 /* AVPlayer.xcdatamodeld in Sources */,
 				49B55E082464341600F20E81 /* VideoTableViewCell.swift in Sources */,
+				491B9E92248E0F2100EA6410 /* PlayerViewController+IMAds.swift in Sources */,
 				497CF36F247EEF0100B4793C /* PlayerViewController+RecommendedTableView.swift in Sources */,
 				49B55E1C246B24C100F20E81 /* CustomPlayerView.swift in Sources */,
+				49471D4F24A16263006DE0CC /* Constants.swift in Sources */,
 				49B55DEA24641F0C00F20E81 /* AppDelegate.swift in Sources */,
 				49B55E0624642EFA00F20E81 /* VideosTableViewController.swift in Sources */,
 				49B55DEC24641F0C00F20E81 /* SceneDelegate.swift in Sources */,
@@ -370,6 +446,7 @@
 		};
 		49B55DFE24641F0F00F20E81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC24F94371F2DDF937724F18 /* Pods-AVPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -387,6 +464,7 @@
 		};
 		49B55DFF24641F0F00F20E81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86D906F2AF89E851C77AEB4D /* Pods-AVPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

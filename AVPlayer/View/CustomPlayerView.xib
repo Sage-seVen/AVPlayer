@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -24,19 +24,19 @@
                             <rect key="frame" x="5" y="188" width="404" height="30"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgL-nW-k0u">
-                                    <rect key="frame" x="0.0" y="0.0" width="42.5" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="42.333333333333336" height="30"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ffc-51-0Yp">
-                                    <rect key="frame" x="48.5" y="0.0" width="307" height="31"/>
+                                    <rect key="frame" x="48.333333333333343" y="0.0" width="307.33333333333326" height="31"/>
                                     <connections>
                                         <action selector="sliderChanged:" destination="93m-JV-pnC" eventType="valueChanged" id="X0E-bz-ZKH"/>
                                     </connections>
                                 </slider>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhj-RL-DFJ">
-                                    <rect key="frame" x="361.5" y="0.0" width="42.5" height="30"/>
+                                    <rect key="frame" x="361.66666666666669" y="0.0" width="42.333333333333314" height="30"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -44,10 +44,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="2Rq-Sq-vzs" userLabel="ControlStack">
-                            <rect key="frame" x="104.5" y="96" width="205" height="36"/>
+                            <rect key="frame" x="104" y="96" width="206" height="36"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yoy-GE-QhH">
-                                    <rect key="frame" x="0.0" y="0.0" width="25" height="36"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="25.333333333333332" height="36"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                     <state key="normal" image="backward.fill" catalog="system"/>
                                     <connections>
@@ -55,7 +55,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nQ-fE-gm0">
-                                    <rect key="frame" x="90" y="0.0" width="25" height="36"/>
+                                    <rect key="frame" x="90.333333333333343" y="0.0" width="25.333333333333329" height="36"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                     <state key="normal" image="pause.fill" catalog="system"/>
                                     <connections>
@@ -63,7 +63,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lt-vR-ZGv">
-                                    <rect key="frame" x="180" y="0.0" width="25" height="36"/>
+                                    <rect key="frame" x="180.66666666666669" y="0.0" width="25.333333333333343" height="36"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                     <state key="normal" image="forward.fill" catalog="system"/>
                                     <connections>

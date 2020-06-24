@@ -61,5 +61,6 @@ extension PlayerViewController: UITableViewDataSource,UITableViewDelegate{
         let playerVC = self.storyboard?.instantiateViewController(identifier: "playerVC") as! PlayerViewController
         playerVC.videoToPlay = selectedVideo
         self.navigationController?.pushViewController(playerVC, animated: true)
+        //self.navigationController?.viewControllers.removeLast()
     }
 }

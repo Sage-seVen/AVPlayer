@@ -21,6 +21,16 @@ class CustomAVPlayer{
         playerLayer.videoGravity = .resizeAspectFill
     }
     
+    func initPlayer(with urlString: String){
+        let url = URL(string: urlString)
+        //let asset = AVAsset(url: url!)
+        //let playerItem = AVPlayerItem(asset: asset)
+        //player = AVPlayer(playerItem: playerItem)
+        player = AVPlayer(url: url!)
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = .resizeAspectFill
+    }
+    
     func play(){
         player.play()
     }
@@ -67,11 +77,17 @@ class CustomAVPlayer{
         }
     }
     
+    //Run in Main thread or will return Nan
      func getCurrentItemDuration() -> Double? {
         if let duration = player.currentItem?.duration.seconds{
             return duration
         }
         return nil
+    }
+    
+    //Run in Main Thread or will return Nan
+    func getTimeInSeconds( from Time : CMTime) -> Double{
+        return CMTimeGetSeconds(Time)
     }
     
     func removeTimeObservers(){

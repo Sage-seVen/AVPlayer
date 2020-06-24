@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleInteractiveMediaAds
 
 class PlayerViewController: UIViewController, UIGestureRecognizerDelegate{
     
@@ -19,6 +20,19 @@ class PlayerViewController: UIViewController, UIGestureRecognizerDelegate{
     var playerControlview : UIView!
     var isPlayerControlViewHidden : Bool!
     
+    //IMA Vars
+    var adsLoader : IMAAdsLoader!
+    var adsManager: IMAAdsManager!
+    var contentPlayhead: IMAAVPlayerContentPlayhead?
+    //var startTime : TimeInterval
+    //var endTime : TimeInterval
+    //var isPlayed: Bool
+    var myAdCuePoints: [NSNumber]! = [NSNumber(value: 30.0), NSNumber(value: 60.0)]
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hideNavBar()
@@ -27,6 +41,13 @@ class PlayerViewController: UIViewController, UIGestureRecognizerDelegate{
         self.videoView.addGestureRecognizer(gesture)
         preparePlayer()
         customAVPlayer.play()
+        setupContentPlayhead()
+        setupAdsLoader()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        requestAds()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,6 +78,9 @@ class PlayerViewController: UIViewController, UIGestureRecognizerDelegate{
             //Adding Playerview in Controller
             videoView.addSubview(playerView)
             videoView.frame = playerView.bounds
+            
+            //Init Player with either VideoObject or Online Url
+            //customAVPlayer.initPlayer(with: K.bigBunnyUrl)
             customAVPlayer.initPlayer(with: videoToPlay)
             
             //Adding Player in Playerview
@@ -72,6 +96,10 @@ class PlayerViewController: UIViewController, UIGestureRecognizerDelegate{
             
             //Customising Player View Controls
             playerView.hidePlayerControls(afterSeconds: 3)
+            
+            //Adding CuePoints
+            addCuePoints()
+            playerView.addCuepointsInSlider(cuepoints: myAdCuePoints)
         }
     }
     
